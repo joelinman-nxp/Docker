@@ -63,6 +63,6 @@ When creating images, it is important to follow these best practices to help ens
 
 - **Avoid storing sensitive information in images** - Avoid storing secrets, passwords, or other sensitive information in container images. Instead, use environment variables or external secrets management systems like Hashicorp Vault or AWS Secrets Manager.
 
-- **Label images for easy identification** - Use labels to provide metadata about images, such as version, maintainer, or dependencies. This can make it easier to identify and manage images in a registry.
+- **Label images for easy identification** - Use labels to provide metadata about images, such as version, maintainer, or dependencies. This can make it easier to identify and manage images in a repository.
 
 Overall, following these best practices can help create container images that are secure, efficient, and easy to maintain, while minimizing the risk of vulnerabilities and increasing portability and scalability.
