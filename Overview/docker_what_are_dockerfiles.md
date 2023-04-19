@@ -22,7 +22,7 @@ below, i have listed some of the most common Dockerfile statements along with so
 
 ---
 
-### Further/Advanced Statements to consider
+### Further/Advanced Statements to Consider
 
 `MAINTAINER`: This statement is used to identify the author or maintainer of the Dockerfile. The parameter is simply the name and email of the maintainer. For example: `MAINTAINER Joel Inman <joelinman@example.com>`.
 
