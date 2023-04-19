@@ -1,4 +1,4 @@
-# Use an official Ubuntu 20.04 image as the base image
+# Using an official Ubuntu 20.04 image as the base image
 # The `FROM` statement specifies the base image that we're building on top of.
 FROM ubuntu:20.04
 
