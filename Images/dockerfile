@@ -1,0 +1,36 @@
+# Use an official Ubuntu 20.04 image as the base image
+# The `FROM` statement specifies the base image that we're building on top of.
+FROM ubuntu:20.04
+
+
+# Install Apache, MySQL, and PHP
+# This RUN statement installs Apache, MySQL, and PHP, as well as any necessary dependencies.
+RUN apt-get update && \
+    apt-get -y install apache2 mysql-server php libapache2-mod-php php-mysql && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+
+# Configure MySQL
+# This RUN statement configures MySQL by creating a new database and user and granting privileges.
+RUN service mysql start && \
+    mysql -e "CREATE DATABASE mydatabase;" && \
+    mysql -e "CREATE USER 'myuser'@'%' IDENTIFIED BY 'mypassword';" && \
+    mysql -e "GRANT ALL PRIVILEGES ON mydatabase.* TO 'myuser'@'%';" && \
+    mysql -e "FLUSH PRIVILEGES;"
+
+
+# Copy the web app files to the Apache document root
+# The COPY statement copies the files for the web app into the Apache document root directory.
+COPY ./image_assets/app /var/www/html/
+
+# Expose port 80 for Apache
+# The EXPOSE statement specifies that we want to expose port 80 for Apache.
+EXPOSE 80
+
+# Start Apache in the foreground when the container starts
+# The CMD statement starts Apache in the foreground when the container starts.
+CMD ["apachectl", "-D", "FOREGROUND"]
+
+# Once you've created this Dockerfile, you can build it into a Docker image using the `docker build` command,
+# and then run the image using the `docker run` command.
