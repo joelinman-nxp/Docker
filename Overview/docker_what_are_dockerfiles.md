@@ -50,6 +50,6 @@ below, i have listed some of the most common Dockerfile statements along with so
 
 - **Set environment variables** - Use the Dockerfile to set any environment variables needed to run your application. For example, you might set a PORT variable to specify the port number that your application listens on.
 
-Using environment variables is important ot protect sensitive 
+    Using environment variables is important to protect sensitive data when you build your image and host it.
 
 - **Define the default command** - Use the Dockerfile to specify the default command that should be run when the image is launched. This command should start your application.
